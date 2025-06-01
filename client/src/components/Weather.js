@@ -24,7 +24,7 @@ function Weather() {
 };
   return (
     <div className="weather-app">
-      <h1>Weather App</h1>
+      <h1>Ratones!! Como está el clima HOY???</h1>
       <SearchBar onSearch={handleSearch} />
       
       {loading && <p>Cargando...</p>}

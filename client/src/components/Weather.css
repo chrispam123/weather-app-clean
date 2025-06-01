@@ -1,10 +1,21 @@
 .weather-app {
-  max-width: 600px;
-  margin: 0 auto;
+  background-image: url('/lady.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   padding: 20px;
-  font-family: Arial, sans-serif;
 }
-
+.weather-app::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3); /* Overlay oscuro */
+  z-index: -1;
+}
 .search-bar {
   display: flex;
   gap: 10px;
@@ -25,6 +36,10 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #2ecc71; /* Changed hover color to green */
 }
 
 .weather-card {
