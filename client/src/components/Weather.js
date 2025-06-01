@@ -9,21 +9,19 @@ function Weather() {
   const [error, setError] = useState('');
 
   const handleSearch = async (city) => {
-    setLoading(true);
-    setError('');
-    
-    try {
-      // Por ahora conectamos con nuestro backend local
-      const response = await fetch(`http://localhost:5000/api/weather?city=${city}`);
-      const data = await response.json();
-      setWeatherData(data);
-    } catch (err) {
-      setError('Error al obtener datos del clima');
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  setLoading(true);
+  setError('');
+  
+  try {
+    const response = await fetch(`https://weather-app-api-doyg.onrender.com/api/weather?city=${city}`);
+    const data = await response.json();
+    setWeatherData(data);
+  } catch (err) {
+    setError('Error al obtener datos del clima');
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <div className="weather-app">
       <h1>Weather App</h1>
